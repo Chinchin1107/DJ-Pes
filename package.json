@@ -1,0 +1,12 @@
+{
+  "name": "dj-pes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/main.js",
+  "scripts": {
+    "start": "node ./src/main.js",
+    "dev": "nodemon ./src/main.js"
+  },
+  "author": "chinchin",
+  "license": "ISC"
+}
