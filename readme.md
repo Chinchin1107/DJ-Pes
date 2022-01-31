@@ -1,5 +1,7 @@
 # **DJ Pes**
 ## Music Bot In Discord
+<img src="./assets/icon/icon.png" alt="logo" style="width:200px;"/>
+
 ---
 
 ## **Version Info**
