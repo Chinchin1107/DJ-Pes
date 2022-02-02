@@ -14,7 +14,6 @@ client.on('messageCreate', async message => {
     if (message.author.bot || !message.content) return;
     const argsInp = splitSpace(message.content);
     if (argsInp[0].toLowerCase() == 'dj') {
-
         if (argsInp.length == 1 || cmds.info.includes(argsInp[1].toLowerCase())) {
             message.channel.send('DJ Pes Come!!\n==========\nLicense: MIT\nauthor: @Chinchin1107 (Anawach Anantachoke)\nsource code: https://github.com/Chinchin1107/DJ-Pes\n' + '==========\n' + helpCmd + '\n==========');
             return;
@@ -146,4 +145,4 @@ const splitSpace = (str) => {
     return result;
 }
 
-client.login('OTM3MTkxNzIyODYwMDIzOTQ5.YfYJzg.BvmIHeJ1lKLpiH9BR9nIzWNn7G0')
+client.login(require('./token').token);
