@@ -7,8 +7,8 @@ const ytSearcher = require('ytsearcher');
 
 const searcher = new ytSearcher.YTSearcher({ key: require('./token').youtubeApiKey, revealKey: true });
 
-const cmds = { 'play': ['p', 'play'], 'select': ['sl', 'select'], 'skip': ['sk', 'skip'], 'remove': ['rm', 'remove'], 'pause': ['ps', 'pause'], 'stop': ['st', 'stop', 'shutup'], 'queue': ['q', 'queue'], 'help': ['h', 'help', 'cmd', 'command', 'cmds'], 'info': ['info', 'if'] };
-const helpCmd = 'Help Command:\nstart type with \'dj\'\nbot info: type dj info or only type dj\nplay: p, play\nselect: sl, select\nskip: sk, skip\nremove: rm, remove\npause: ps, pause\nstop: st, stop, shutup\nqueue: q, queue\nhelp command: h, help, cmd, command';
+const cmds = { 'play': ['p', 'play'], 'select': ['sl', 'select'], 'skip': ['sk', 'skip'], 'remove': ['rm', 'remove'], 'pause': ['ps', 'pause'], 'stop': ['st', 'stop', 'shutup', 'clr', 'cls', 'clear', 'clears'], 'queue': ['q', 'queue'], 'help': ['h', 'help', 'cmd', 'command', 'cmds'], 'info': ['info', 'if'] };
+const helpCmd = 'Help Command:\nstart type with \'dj\'\nbot info: type dj info or only type dj\nplay: p, play\nselect: sl, select\nskip: sk, skip\nremove: rm, remove\npause: ps, pause\nstop: st, stop, shutup, clr, cls, clear, clears\nqueue: q, queue\nhelp command: h, help, cmd, command';
 var queue = new Map();
 var searchGuild = new Map();
 
@@ -54,7 +54,7 @@ client.on('messageCreate', async message => {
                 const searchResult = await searcher.search(argsInp[2], { type: 'video' });
                 if (searchResult.currentPage) {
                     searchGuild.set(message.guild.id, searchResult.currentPage.slice(0, 5));
-                    message.channel.send('==========\nType dj play (1 - ' + (searchResult.currentPage.length <= 5 ? searchResult.currentPage.length : 5) + ')\n');
+                    message.channel.send('==========\nType dj select (1 - ' + (searchResult.currentPage.length <= 5 ? searchResult.currentPage.length : 5) + ')\n');
                     let i = 0;
                     searchResult.currentPage.slice(0, 5).forEach(element => { message.channel.send('**' + (i + 1) + '.** ' + element.title + '\n'); i++; });
                 } else {
@@ -76,7 +76,7 @@ client.on('messageCreate', async message => {
 
             if (isNaN(argsInp[2])) {
                 message.channel.send('----------\nYou must type number only 1 - ' + searchGuild.get(message.guildId.length));
-                return; p;['[;p']
+                return;
             }
 
             if (1 >= Math.round(argsInp[2]) >= searchGuild.get(message.guildId).length) {
@@ -85,10 +85,36 @@ client.on('messageCreate', async message => {
             }
 
             addToQueue(message, searchGuild.get(message.guildId)[Math.round(argsInp[2]) - 1].url);
+            return;
         }
 
-        
+        if (cmds.pause.includes(argsInp[1].toLowerCase())) {
+            if (!queue.has(message.guildId)) {
+                message.channel.send('----------\nThere is no music playing.');
+                return;
+            }
+
+            if (queue.get(message.guildId).player.paused) {
+                message.channel.send('----------\nMusic had already puase.\n');
+            } else {
+                queue.get(message.guildId).player.pause();
+                message.channel.send('----------\nPause music.');
+            }
+            return;
+        }
+        if (cmds.stop.includes(argsInp[1].toLowerCase())) {
+            if (!queue.has(message.guildId)) {
+                message.channel.send('----------\nThere is no music playing.');
+                return;
+            }
+
+            queue.get(message.guildId).connection.destroy();
+            queue.delete(message.guildId);
+            message.channel.send('----------\nStop music.\nBot Leave');
+            return;
+        }
     }
+
 });
 
 client.on('voiceStateUpdate', (oldState, newState) => {
