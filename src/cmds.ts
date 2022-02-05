@@ -136,7 +136,7 @@ __**Queue**__
 
     private remove(): void {
         if (this.argsInp.length < 2) {
-            this.message.channel.send('----------\nYou must enter index of music to remove.\nType `dj remove <number>`.');
+            this.message.channel.send('----------\nYou must enter index of music to remove.\nType `dj rm <number>` or `dj remove <number>`.');
             return;
         }
 
