@@ -26,6 +26,11 @@
 > > > | (Loop Queue Func) Loop Song in queue | [x] | [x] | - |
 > > > | (Help Func) Send information how to user to User | [x] | [x] | - |
 > > > (Get Info Func) Send information about app and server to User | [x] | [x] | - |
+> > > ### **0.0.a.1**
+> > > ### *Task List*
+> > > | Task | Done? | Know? | Dead Line |
+> > > | --- | --- | --- | :---: |
+> > > | Fix Bux For 0.0.a.0 | [ ] | [x] | - |
 ---
 ## **Features**
 ## &emsp; Now
