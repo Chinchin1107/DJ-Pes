@@ -55,27 +55,28 @@ __**Commands List**__
 
             if (this.cmds.cmds.includes(argsInp[1])) { this.commands(); return; }
 
-            if (this.cmds.play.includes(argsInp[1])) { new Play(guildData, message, argsInp); return; }
-
-            if (this.cmds.select.includes(argsInp[1])) { this.select(); return; };
-
-
+            
+            
             if (!this.guildData.queue.has(this.message.guildId as string)) {
                 this.message.channel.send('----------\nThere is no music in queue.');
                 return;
             }
-
+            
             if (this.cmds.queue.includes(argsInp[1])) { this.queue(); return; };
-
+            
             if (!this.message.member!.voice.channelId) {
                 this.message.channel.send('----------\nYou must in voice channel for request music.');
                 return;
             }
-
+            
             if (!this.message.member!.voice.channel!.permissionsFor(this.message.guild?.me as discord.GuildMember).has('CONNECT') || !this.message.member!.voice.channel!.permissionsFor(this.message.guild?.me as discord.GuildMember).has('SPEAK')) {
                 this.message.channel.send('----------\nI don\'t have permission to join or speak in your voice channel.');
                 return;
             }
+            
+            if (this.cmds.play.includes(argsInp[1])) { new Play(guildData, message, argsInp); return; }
+
+            if (this.cmds.select.includes(argsInp[1])) { this.select(); return; };
 
             if (this.cmds.pause.includes(argsInp[1])) { this.pause(); return; };
 
@@ -275,7 +276,7 @@ class Play {
 
             if (searchResult.currentPage) {
                 this.guildData.searchCache.set(this.message.guildId as string, searchResult.currentPage.slice(0, 5));
-                this.message.channel.send('==========\nType `dj sl (1 - ' + (searchResult.currentPage.length <= 5 ? searchResult.currentPage.length : 5) + ')` or `dj select (1 - ' + (searchResult.currentPage.length <= 5 ? searchResult.currentPage.length : 5) + '`\n');
+                this.message.channel.send('==========\nType `dj sl (1 - ' + (searchResult.currentPage.length <= 5 ? searchResult.currentPage.length : 5) + ')` or `dj select (1 - ' + (searchResult.currentPage.length <= 5 ? searchResult.currentPage.length : 5) + ')`\n');
                 let i = 0;
                 searchResult.currentPage.slice(0, 5).forEach(element => { this.message.channel.send('**' + (i + 1) + '.** ' + element.title + '\n'); i++; });
             } else {
