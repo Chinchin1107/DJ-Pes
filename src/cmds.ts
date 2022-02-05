@@ -25,13 +25,22 @@ export class Cmds {
     helpCmds = `==========
 __**Commands List**__
 ----------
+***\*Uppercase, lowercase doesn't matter.\****
+***type dj first then type***
+    **select and find**
 > **play**: \`p, pl, play <url> or <search>\`
 > **select**: \`sl, select <number>\`
+    **pause and stop**
 > **pause**: \`ps, pause\`\n> **resume**: \`rs, resume\`
+> **resume**: \`rs, resume\`\n> **resume**: \`rs, resume\`
 > **stop**: \`st, stop\`\n> **skip**: \`sk, skip\`
+    **manage queue**
+> **skip**: \`sk, skip\`\n> **remove**: \`rm, remove <number>\`;
 > **remove**: \`rm, remove <number>\`\n> **loop**: \`lp, loop\`
 > **queue**: \`q, que, queue\`\n> **cmds**: \`h, help, cmd, cmds, command, commands\`
-> **info**: \`if, info\`
+
+> **commands**: \`h, help, cmd, cmds, command, commands\`
+> **info**: \`if, info, (type only dj)\`
 `;
     guildData: GuildDataModel;
     message: discord.Message;
@@ -131,7 +140,7 @@ __**Queue**__
             return;
         }
 
-        if (isNaN(parseFloat(this.argsInp[1]))) {
+        if (isNaN(parseFloat(this.argsInp[2]))) {
             this.message.channel.send('----------\nYou must enter number.\nType `dj remove <number>`.');
             return;
         }
