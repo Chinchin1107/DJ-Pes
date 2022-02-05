@@ -129,6 +129,7 @@ client.on('voiceStateUpdate', (oldState, newState) => {
         } else {
             if (newState.channel.permissionsFor(newState.client.user).has('CONNECT') && newState.channel.permissionsFor(newState.client.user).has('SPEAK')) {
                 queue.get(newState.guild.id).connection = disVoice.joinVoiceChannel({ channelId: newState.channelId, guildId: newState.guild.id, adapterCreator: newState.guild.voiceAdapterCreator });
+
                 sendMsg(channelId, '----------\nBot follow ' + newState.member.user.username + ' to the ' + newState.channel.name + ' channel.');
             } else {
                 sendMsg(channelId, '----------\nBot don\'t have permission to follow ' + newState.member.user.username + ' to the ' + newState.channel.name + ' channel.\nBot leave.');

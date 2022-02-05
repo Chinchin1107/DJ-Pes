@@ -21,10 +21,10 @@
 > > > | (all) if last one leave channel bot pause | [x] | [x] | - |
 > > > | (all) if last one go to new channel in guil bot chase | [x] | [x] | - |
 > > > | (Stop Func) Bot Stop Song and Leave Voice Channel | [x] | [x] | - |
-> > > | (Skip Func) Go to Next Song In queue | [x] | [ ] | - |
-> > > | (Remove Func) Remove Song Out Of queue | [x] | [ ] | - |
-> > > | (Loop Queue Func) Loop Song in queue | [x] | [ ] | - |
-> > > | (Help Func) Send information how to user to User | [x ] | [x] | - |
+> > > | (Skip Func) Go to Next Song In queue | [x] | [x] | - |
+> > > | (Remove Func) Remove Song Out Of queue | [x] | [x] | - |
+> > > | (Loop Queue Func) Loop Song in queue | [x] | [x] | - |
+> > > | (Help Func) Send information how to user to User | [x] | [x] | - |
 > > > (Get Info Func) Send information about app and server to User | [x] | [x] | - |
 ---
 ## **Features**
@@ -35,11 +35,11 @@
 > | Select Func | [x] | - | 0.0.a.0 &rarr; now |
 > | Pause Func | [x] | - | 0.0.a.0 &rarr; now |
 > | Stop Func | [x] | - | 0.0.a.0 &rarr; now |
-> | Skip Func | [ ] | - | 0.0.a.0 &rarr; now |
-> | Remove Func | [ ] | - | 0.0.a.0 &rarr; now  |
-> Loop Queue Func | [ ] | - | 0.0.a.0 &rarr; now |
+> | Skip Func | [x] | - | 0.0.a.0 &rarr; now |
+> | Remove Func | [x] | - | 0.0.a.0 &rarr; now  |
+> Loop Queue Func | [x] | - | 0.0.a.0 &rarr; now |
 > | Help Func | [x] | - | 0.0.a.0 &rarr; now |
-> | Get Info Func | [x ] | - | 0.0.a.0 &rarr; now |
+> | Get Info Func | [x] | - | 0.0.a.0 &rarr; now |
 ## &emsp; Future
 > Feature | Done? | Result? (1 - 5) | Version |
 > | --- | :---: | :---: | --- |
