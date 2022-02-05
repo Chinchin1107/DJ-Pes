@@ -94,7 +94,7 @@ __**Commands List**__
             this.message.channel.send('----------\nThere is no music in queue.');
             return;
         }
-        
+
         let queue = this.guildData.queue.get(this.message.guildId as string)!.queue;
         let queueStr = '';
 
@@ -117,10 +117,10 @@ __**Queue**__
 
         if (this.guildData.queue.get(this.message.guildId as string)!.loop) {
             this.guildData.queue.get(this.message.guildId as string)!.loop = false;
-            this.message.channel.send('----------\nloop is off.');
+            this.message.channel.send('----------\nloop is off.\nTo unloop type `dj lp` or `dj loop` again.');
         } else {
             this.guildData.queue.get(this.message.guildId as string)!.loop = true;
-            this.message.channel.send('----------\nloop is on.');
+            this.message.channel.send('----------\nloop is on\nTo loop type `dj lp` or `dj loop` again.');
         }
 
     }
@@ -167,11 +167,11 @@ __**Queue**__
 
     private pause(): void {
         if (this.guildData.queue.get(this.message.guildId as string)!.pause) {
-            this.message.channel.send('----------\nMusic had already puase.\n');
+            this.message.channel.send('----------\nMusic had already puase.\nTo play type `dj rs` or `dj resume`\n');
         } else {
             this.guildData.queue.get(this.message.guildId as string)!.player.pause();
             this.guildData.queue.get(this.message.guildId as string)!.pause = true;
-            this.message.channel.send('----------\nPause music.\nType `dj resume` to continue music.');
+            this.message.channel.send('----------\nPause music.\nType `dj rs` or `dj resume` to continue music.');
         }
         return;
     }
