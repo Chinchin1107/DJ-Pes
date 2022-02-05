@@ -49,25 +49,25 @@ __**Commands List**__
                 this.guildData.searchCache.delete(message.guildId as string);
                 return;
             }
+            
+            if (this.cmds.queue.includes(argsInp[1])) { this.queue(); return; };
 
             if (argsInp.length == 1 || this.cmds.info.includes(argsInp[1].toLowerCase())) { this.info(); return; }
 
             if (this.cmds.cmds.includes(argsInp[1])) { this.commands(); return; }
-
-            if (this.cmds.queue.includes(argsInp[1])) { this.queue(); return; };
-
+            
             if (!this.message.member!.voice.channelId) {
                 this.message.channel.send('----------\nYou must in voice channel for request music.');
                 return;
             }
-
+            
             if (!this.message.member!.voice.channel!.permissionsFor(this.message.guild?.me as discord.GuildMember).has('CONNECT') || !this.message.member!.voice.channel!.permissionsFor(this.message.guild?.me as discord.GuildMember).has('SPEAK')) {
                 this.message.channel.send('----------\nI don\'t have permission to join or speak in your voice channel.');
                 return;
             }
-
+            
             if (this.cmds.play.includes(argsInp[1])) { new Play(guildData, message, argsInp); return; }
-
+            
             if (this.cmds.select.includes(argsInp[1])) { this.select(); return; };
 
             if (!this.guildData.queue.has(this.message.guildId as string)) {
@@ -90,7 +90,11 @@ __**Commands List**__
     }
 
     private async queue(): Promise<void> {
-
+        if (!this.guildData.queue.has(this.message.guildId as string)) {
+            this.message.channel.send('----------\nThere is no music in queue.');
+            return;
+        }
+        
         let queue = this.guildData.queue.get(this.message.guildId as string)!.queue;
         let queueStr = '';
 
