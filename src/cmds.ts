@@ -145,13 +145,13 @@ __**Queue**__
             return;
         }
 
-        if (2 > Math.floor(parseFloat(this.argsInp[1])) || Math.floor(parseFloat(this.argsInp[1])) >= this.guildData.queue.get(this.message.guildId as string)!.queue.length) {
+        if (2 > Math.floor(parseFloat(this.argsInp[2])) || Math.floor(parseFloat(this.argsInp[2])) >= this.guildData.queue.get(this.message.guildId as string)!.queue.length) {
             this.message.channel.send('----------\nYou must enter number in index queue, between 2 and ' + this.guildData.queue.get(this.message.guildId as string)!.queue.length + '.');
             return;
         }
 
-        this.guildData.queue.get(this.message.guildId as string)!.queue.splice(Math.floor(parseFloat(this.argsInp[1])), 1);
-        this.message.channel.send('----------\nRemove music from index ' + Math.floor(parseFloat(this.argsInp[1])) + '.');
+        this.guildData.queue.get(this.message.guildId as string)!.queue.splice(Math.floor(parseFloat(this.argsInp[2])), 1);
+        this.message.channel.send('----------\nRemove music from index ' + Math.floor(parseFloat(this.argsInp[2])) + '.');
     }
 
     private skip(): void {
@@ -200,12 +200,12 @@ __**Queue**__
 
     private select(): void {
         if (!this.guildData.searchCache.has(this.message.guildId as string)) {
-            this.message.channel.send('----------\nthere is no search list.\ntype \'dj play\' for search song.');
+            this.message.channel.send('----------\nthere is no search list.\ntype \`dj p\` or \`dj play\` for search song.');
             return;
         }
 
         if (this.argsInp.length < 2) {
-            this.message.channel.send('----------\nyou must type number to select.\nor type \'dj play\' again to search song');
+            this.message.channel.send('----------\nyou must type number to select.\nor type \`dj pf\` or \`dj play\` again to search song');
             return;
         }
 

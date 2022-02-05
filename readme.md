@@ -6,27 +6,30 @@
 
 ## **Version Info**
 > ### 0
-> > ### 0.0
+> > ## **0.0**
+> > ### *Task List*
+> > | Task | Done? | Know? | Dead Line |
+> > | --- | --- | --- | :---: |
+> > | (All) Connect to Discord api | [x] | [x] | - |
+> > | (All) Get Data From User | [x] | [x] | - |
+> > | (All) Queue System Base on Guild | [x] | [x] | - |
+> > | (Play Func) check if link | [x] | [x]: src in npm ytdl-core | - |
+> > | (Play Func) search in youtube | [x] | [x]: src in npm yt searcher or yt search | - |
+> > | (Play Select Func) Get Data From Yt Search List and let Users Select | [x] | [x] | - |
+> > | (Play Func) stream music to discord | [x] | [x]: src in npm ytdl-core | - |
+> > | (all) if last one leave channel bot pause | [x] | [x] | - |
+> > | (all) if last one go to new channel in guil bot chase | [x] | [x] | - |
+> > | (Stop Func) Bot Stop Song and Leave Voice Channel | [x] | [x] | - |
+> > | (Skip Func) Go to Next Song In queue | [x] | [x] | - |
+> > | (Remove Func) Remove Song Out Of queue | [x] | [x] | - |
+> > | (Loop Queue Func) Loop Song in queue | [x] | [x] | - |
+> > | (Help Func) Send information how to user to User | [x] | [x] | - |
+> > (Get Info Func) Send information about app and server to User | [x] | [x] | - |
+> > > ### **0.0.a.0**
 > > > ### *Task List*
 > > > | Task | Done? | Know? | Dead Line |
 > > > |--- | --- | --- | :---: |
-> > > |(All) Connect to Discord api | [x] | [x] | - |
-> > > | (All) Get Data From User | [x] | [x] | - |
-> > > | (All) Queue System Base on Guild | [x] | [x] | - |
-> > > | (Play Func) check if link | [x] | [x]: src in npm ytdl-core | - |
-> > > | (Play Func) search in youtube | [x] | [x]: src in npm yt searcher or yt search | - |
-> > > | (Play Select Func) Get Data From Yt Search List and let Users Select | [x] | [x] | - |
-> > > | (Play Func) stream music to discord | [x] | [x]: src in npm ytdl-core | - |
-> > > | (all) if last one leave channel bot pause | [x] | [x] | - |
-> > > | (all) if last one go to new channel in guil bot chase | [x] | [x] | - |
-> > > | (Stop Func) Bot Stop Song and Leave Voice Channel | [x] | [x] | - |
-> > > | (Skip Func) Go to Next Song In queue | [x] | [x] | - |
-> > > | (Remove Func) Remove Song Out Of queue | [x] | [x] | - |
-> > > | (Loop Queue Func) Loop Song in queue | [x] | [x] | - |
-> > > | (Help Func) Send information how to user to User | [x] | [x] | - |
-> > > (Get Info Func) Send information about app and server to User | [x] | [x] | - |
-> > > ### **0.0.a.0**
-> > > do the task
+> > > | Do Main Task | [x] | [ ] | - |
 ---
 ## **Features**
 ## &emsp; Now
