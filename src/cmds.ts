@@ -25,7 +25,6 @@ export class Cmds {
     helpCmds = `==========
 __**Commands List**__
 ----------
-
 > **play**: \`p, pl, play <url> or <search>\`
 > **select**: \`sl, select <number>\`
 > **pause**: \`ps, pause\`\n> **resume**: \`rs, resume\`
