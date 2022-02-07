@@ -24,9 +24,9 @@ export class Cmds {
     };
     helpCmds = `==========
 __**Commands List**__
+\*\\\*Uppercase nad lowercase doesn't matter.\\\*\*
+\*\\\*Type dj first then type\\\*\*
 ----------
-***\*Uppercase, lowercase doesn't matter.\****
-***type dj first then type***
     **select and find**
 > **play**: \`p, pl, play <url> or <search>\`
 > **select**: \`sl, select <number>\`
@@ -56,7 +56,6 @@ __**Commands List**__
         if (argsInp[0] == 'dj') {
             if ((argsInp.length <= 1 || !this.cmds.select.includes(argsInp[1])) && guildData.searchCache.has(message.guildId as string)) {
                 this.guildData.searchCache.delete(message.guildId as string);
-                return;
             }
 
             if (this.cmds.queue.includes(argsInp[1])) { this.queue(); return; };
@@ -126,10 +125,10 @@ __**Queue**__
 
         if (this.guildData.queue.get(this.message.guildId as string)!.loop) {
             this.guildData.queue.get(this.message.guildId as string)!.loop = false;
-            this.message.channel.send('----------\nloop is off.\nTo unloop type `dj lp` or `dj loop` again.');
+            this.message.channel.send('----------\nloop is off.\nTo loop type `dj lp` or `dj loop` again.');
         } else {
             this.guildData.queue.get(this.message.guildId as string)!.loop = true;
-            this.message.channel.send('----------\nloop is on\nTo loop type `dj lp` or `dj loop` again.');
+            this.message.channel.send('----------\nloop is on\nTo unloop type `dj lp` or `dj loop` again.');
         }
 
     }
@@ -204,8 +203,8 @@ __**Queue**__
             return;
         }
 
-        if (this.argsInp.length < 2) {
-            this.message.channel.send('----------\nyou must type number to select.\nor type \`dj pf\` or \`dj play\` again to search song');
+        if (this.argsInp.length < 3) {
+            this.message.channel.send('----------\nyou must type \`dj sl <number>\` or \`dj select <number>\` \nor type \`dj p\` or \`dj play\` again to search song');
             return;
         }
 

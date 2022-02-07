@@ -30,7 +30,7 @@
 > > > ### *Task List*
 > > > | Task | Done? | Know? | Dead Line |
 > > > |--- | --- | --- | :---: |
-> > > | Do Main Task | [ ] | [x] | - |
+> > > | Do Main Task | [x] | [x] | - |
 >
 > > ## **0.1**
 > > ### *Task List*
